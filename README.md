@@ -11,25 +11,25 @@ $ docker build . -t "gif-expert-app:v0.0.1"
 ### Testing setup for React + Vite
 
 1. Add packages:
-```
-yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react 
-yarn add --dev @testing-library/react @types/jest jest-environment-jsdom
-```
-
-2. Opcional: Si usamos Fetch API en el proyecto:
-```
-yarn add --dev whatwg-fetch
+```bash
+$ yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react 
+$ yarn add --dev @testing-library/react @types/jest jest-environment-jsdom
 ```
 
-3. Actualizar los scripts del __package.json__
+2. Optional: If we use Fetch API in the project
+```bash
+$ yarn add --dev whatwg-fetch
 ```
+
+3. Update the __ package.json __ scripts
+```json
 "scripts: {
   ...
   "test": "jest --watchAll"
 ```
 
-4. Crear la configuración de babel __babel.config.cjs__
-```
+4. Create babel configuration __babel.config.cjs__
+```js
 module.exports = {
     presets: [
         [ '@babel/preset-env', { targets: { esmodules: true } } ],
@@ -38,10 +38,10 @@ module.exports = {
 };
 ```
 
-5. Opcional, pero eventualmente necesario, crear Jest config y setup:
+5. Optional, but eventually necessary, create Jest config and setup:
 
 __jest.config.cjs__
-```
+```js
 module.exports = {
     testEnvironment: 'jest-environment-jsdom',
     setupFiles: ['./jest.setup.js']
@@ -49,7 +49,7 @@ module.exports = {
 ```
 
 __jest.setup.js__
-```
-// En caso de necesitar la implementación del FetchAPI
+```js
+// In case you need the implementation of the FetchAPI
 import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
 ```
