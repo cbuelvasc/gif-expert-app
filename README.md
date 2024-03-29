@@ -24,8 +24,8 @@ $ yarn add --dev whatwg-fetch
 3. Update the __ package.json __ scripts
 ```json
 "scripts: {
-  ...
   "test": "jest --watchAll"
+}
 ```
 
 4. Create babel configuration __babel.config.cjs__
