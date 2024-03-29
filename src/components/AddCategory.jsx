@@ -20,7 +20,7 @@ export const AddCategory = ({ onNewCategory }) => {
   };
 
   return (
-    <form className="group relative" onSubmit={(event) => onSubmit(event)}>
+    <form className="group relative" onSubmit={(event) => onSubmit(event)} aria-label="form">
       <svg
         width="20"
         height="20"
