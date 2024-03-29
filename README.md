@@ -23,7 +23,7 @@ $ yarn add --dev whatwg-fetch
 
 3. Update the __ package.json __ scripts
 ```json
-"scripts: {
+"scripts": {
   "test": "jest --watchAll"
 }
 ```
